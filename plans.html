@@ -1,0 +1,530 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Планы и цели</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+
+        .chapter-header {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .chapter-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+
+            .chapter-content.expanded {
+                max-height: 2000px; /* Достаточно большое значение для анимации */
+                transition: max-height 0.5s ease-in;
+            }
+
+        .chevron {
+            transition: transform 0.3s ease;
+        }
+
+        .expanded .chevron {
+            transform: rotate(180deg);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        th {
+            background-color: #e5e7eb;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background-color: #f9fafb;
+        }
+
+        .lang-button.active {
+            background-color: #d1d5db; /* gray-300 */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg w-full max-w-7xl">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800" data-key="mainTitle">Планы и цели</h1>
+            <p class="mt-2 text-md md:text-lg text-gray-600" data-key="mainSubtitle">
+                Приложение к приказу Кара-Кулжинской местной государственной администрации от 27 августа 2024 года № 01-12/275
+            </p>
+            <h2 class="mt-4 text-xl md:text-2xl font-semibold text-gray-700" data-key="planTitle">
+                План мероприятий по реализации Государственной стратегии по противодействию коррупции на 2025-2030 годы
+            </h2>
+        </header>
+
+        <div class="flex justify-end mb-4 space-x-2">
+            <button id="lang-kg" class="lang-button px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 transition-colors">Кыргызча</button>
+            <button id="lang-ru" class="lang-button px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 transition-colors active">Русский</button>
+        </div>
+
+        <div id="plan-container" class="space-y-4">
+
+            <div class="bg-gray-50 rounded-lg shadow-sm overflow-hidden">
+                <div class="chapter-header p-4 flex items-center justify-between text-lg font-medium text-gray-800 hover:bg-gray-200">
+                    <span data-key="chapter1Title">Глава 1. Коррупцияга каршы мыйзамды өркүндөтүү, аны практикада колдонуунун натыйжалуулугүн камсыздоо</span>
+                    <svg class="chevron w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="chapter-content p-4 text-gray-700">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <thead>
+                                <tr>
+                                    <th data-key="col1">№</th>
+                                    <th data-key="col2">Милдеттер</th>
+                                    <th data-key="col3">Иш-чаралар</th>
+                                    <th data-key="col4">Мөөнөттөрү</th>
+                                    <th data-key="col5">Натыйжалар</th>
+                                    <th data-key="col6">Жооптуулар</th>
+                                    <th data-key="col7">Каржылоо</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td data-key="chapter1Row1Task">Мамлекеттик органдардын жана ЖӨБО кызматчылары үчүн коррупцияга каршы мыйзамдарды колдонуу боюнча окуу тренингдерин уюштуруу</td>
+                                    <td data-key="chapter1Row1Actions">2026-жыл</td>
+                                    <td data-key="chapter1Row1Deadline">Окуу системасынын программасынын негизинде мамлекеттик органдардын жана ЖӨБО кызматчылары үчүн коррупцияга каршы аракеттенүү жаатында жаңыдан кабыл алынган мыйзам актыларын колдонуу боюнча окуу тренингдери өткөрүлөт</td>
+                                    <td data-key="chapter1Row1Results">ОЮ, ЖМА, ЖӨБО, мамлекеттик органдар</td>
+                                    <td data-key="chapter1Row1Responsible">Республикалык бюджет мамлекеттик органдар үчүн каралган каражаттардын чегинде. Өнүктүрүү боюнча өнөктөштөрдүн каражаттары</td>
+                                    <td data-key="chapter1Row1Funding">Республикалык бюджет мамлекеттик органдар үчүн каралган каражаттардын чегинде. Өнүктүрүү боюнча өнөктөштөрдүн каражаттары</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg shadow-sm overflow-hidden">
+                <div class="chapter-header p-4 flex items-center justify-between text-lg font-medium text-gray-800 hover:bg-gray-200">
+                    <span data-key="chapter2Title">Глава 2. Социалдык чөйрөнүн жана экономиканын тармактарында жарандардын мамлекеттик бийлик органдары менен өз ара аракеттенүүсүндө коррупциялык көрүнүштөрдүн алдын алуу</span>
+                    <svg class="chevron w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="chapter-content p-4 text-gray-700">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <thead>
+                                <tr>
+                                    <th data-key="col1">№</th>
+                                    <th data-key="col2">Милдеттер</th>
+                                    <th data-key="col3">Иш-чаралар</th>
+                                    <th data-key="col4">Мөөнөттөрү</th>
+                                    <th data-key="col5">Натыйжалар</th>
+                                    <th data-key="col6">Жооптуулар</th>
+                                    <th data-key="col7">Каржылоо</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td data-key="chapter2Row1Task">Мамлекеттик башкаруу жана жергиликтүү өз алдынча башкаруу системасынын кызматкерлеринин коррупциялык мотивациясын төмөндөтүү</td>
+                                    <td data-key="chapter2Row1Actions">Жогорку квалификациялуу адистерди тартуу жана кадрдык потенциалды сактоо үчүн шарттарды жакшыртуу, мамлекеттик органдарда жана ЖӨБО иштин кадырбаркын жана жагымдуулугун жогорулатуу жана мамлекеттик башкаруу секторунда коррупциялык тобокелдиктердин болушун төмөндөтүү боюнча чаралардын комплексин иштеп чыгуу</td>
+                                    <td data-key="chapter2Row1Deadline">2025-2027-жылдар</td>
+                                    <td data-key="chapter2Row1Results">Мамлекеттик жана муниципалдык кызмат орундарына кадрларды тандоо жана системаны жакшыртуу боюнча чаралар көрүлөт</td>
+                                    <td data-key="chapter2Row1Responsible">ЖӨБО, мамлекеттик органдар</td>
+                                    <td data-key="chapter2Row1Funding">Мамлекеттик органдарга жана ЖӨБО бөлүнгөн каражаттардын чегинде</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td data-key="chapter2Row2Task">Мамлекеттик башкаруу системасында коррупцияга каршы идеологияны, моралдык-этикалык, адеп-ахлактык жана баалуулук багыттарды калыптандыруу</td>
+                                    <td data-key="chapter2Row2Actions">1. Мамлекеттик органдардын жана ЖӨБО кызматчыларынын этика ченемдерин сактоосун камсыз кылуу...<br>2. Мамлекеттик кызмат жана жергиликтүү өз алдынча башкаруу иштери боюнча...<br>3. Кызматчылар тарабынан этиканын принциптерин жана ченемдерин сактоо...</td>
+                                    <td data-key="chapter2Row2Deadline">2025-2027-жылдар</td>
+                                    <td data-key="chapter2Row2Results">1. Жыл сайын мониторинг жана талдоо жүргүзүлөт...<br>2. Мониторингдин жыйынтыктары расмий сайттарга жайгаштырылат...<br>3. Атайын программалар иштелип чыкты жана ишке ашырылып жатат</td>
+                                    <td data-key="chapter2Row2Responsible">ЖӨБО, мамлекеттик органдар</td>
+                                    <td data-key="chapter2Row2Funding">Республикалык бюджет</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td data-key="chapter2Row3Task">Мамлекеттик жана муниципалдык кызматчылардын кесиптик компетенциясын жогорулатуу...</td>
+                                    <td data-key="chapter2Row3Actions">Кызыкчылыктардын кагылышуусун башкарууга... коррупцияга каршы окутуу системасын өнүктүрүү</td>
+                                    <td data-key="chapter2Row3Deadline">2025-2027-жылдар</td>
+                                    <td data-key="chapter2Row3Results">Типтүү программа бекитилген. Кызматчылардын 30%дан кем эмесин камтуу менен окутуу тренингдери туруктуу негизде өткөрүлөт</td>
+                                    <td data-key="chapter2Row3Responsible">ЖӨБО, мамлекеттик органдар</td>
+                                    <td data-key="chapter2Row3Funding">Республикалык бюджет</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td data-key="chapter2Row4Task">Социалдык чөйрөнүн жана экономиканын тармактарында жарандардын мамлекеттик бийлик органдары менен өз ара аракеттенүүсүндө коррупциялык тобокелдиктерди минималдаштыруу</td>
+                                    <td data-key="chapter2Row4Actions">1. Бийлик органдарынын жарандар жана жеке сектор менен өз ара аракеттенүү процесстерин автоматташтырууга багытталган...<br>2. "Түндүк" ведомстволор аралык электрондук өз ара аракеттенүү системасы аркылуу...<br>3. Мамлекеттик органдарда жана ЖӨБО уруксат берүүчү документтерди берүү...',
+                                    <td data-key="chapter2Row4Deadline">2025-жыл, 2025-2026-жылдар, 2025-2027-жылдар</td>
+                                    <td data-key="chapter2Row4Results">Жол-жоболордун айкындуулугун жана ачыктыгын камсыз кылууга... багытталган ченемдик укуктук актылар кабыл алынды</td>
+                                    <td data-key="chapter2Row4Responsible">ЖӨБО, мамлекеттик органдар</td>
+                                    <td data-key="chapter2Row4Funding">Республикалык бюджет</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td data-key="chapter2Row5Task">"Мамлекеттик жана муниципалдык кызмат көрсөтүүлөр жөнүндө" Кыргыз Республикасынын Мыйзамын... өркүндөтүү</td>
+                                    <td data-key="chapter2Row5Actions">1. "Мамлекеттик жана муниципалдык кызмат көрсөтүүлөр жөнүндө" Кыргыз Республикасынын Мыйзамына өзгөртүүлөрдү киргизүү...<br>2. Мамлекеттик жана муниципалдык кызмат көрсөтүүгө юридикалык/жеке жактарды мамлекеттик аккредитациялоо...',
+                                    <td data-key="chapter2Row5Deadline">2025-жылдын I жарым жылдыгы, 2025-жылдын III кварталы</td>
+                                    <td data-key="chapter2Row5Results">Мыйзам кабыл алынды. Типтүү жобону бекитүү жөнүндө ченемдик укуктук акт кабыл алынды</td>
+                                    <td data-key="chapter2Row5Responsible">ОЮ, ЖӨБО, мамлекеттик органдар</td>
+                                    <td data-key="chapter2Row5Funding">Республикалык бюджет</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg shadow-sm overflow-hidden">
+                <div class="chapter-header p-4 flex items-center justify-between text-lg font-medium text-gray-800 hover:bg-gray-200">
+                    <span data-key="chapter3Title">Глава 3. Мамлекеттик каражаттарды башкаруу, финансылык контролдоо системаларын жана сатып алуу жол-жоболорун өркүндөтүү</span>
+                    <svg class="chevron w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="chapter-content p-4 text-gray-700">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <thead>
+                                <tr>
+                                    <th data-key="col1">№</th>
+                                    <th data-key="col2">Милдеттер</th>
+                                    <th data-key="col3">Иш-чаралар</th>
+                                    <th data-key="col4">Мөөнөттөрү</th>
+                                    <th data-key="col5">Натыйжалар</th>
+                                    <th data-key="col6">Жооптуулар</th>
+                                    <th data-key="col7">Каржылоо</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td data-key="chapter3Row1Task">Жарандардын мамлекеттик бийлик органдары менен өз ара аракеттенүүсүндө коррупциялык көрүнүштөрдүн алдын алуу</td>
+                                    <td data-key="chapter3Row1Actions">Коррупцияга жол бербөө жана алдын алуу боюнча чараларды көрүү менен коррупциялык укук бузууларга байланыштуу мамлекеттик органдарга жана ЖӨБО келип түшкөн кайрылууларды (даттанууларды) кароо жана талдоо жүргүзүү</td>
+                                    <td data-key="chapter3Row1Deadline">2025-2027-жылдар</td>
+                                    <td data-key="chapter3Row1Results">Ички укуктук актылар аркылуу Коррупцияны алдын алуу чараларын көрүү менен кайрылууларга талдоо жүргүзүүнүн тартиби жөнгө салынды, ал жыл сайын жүргүзүлөт</td>
+                                    <td data-key="chapter3Row1Responsible">ЖӨБО, мамлекеттик органдар</td>
+                                    <td data-key="chapter3Row1Funding">Талап кылынбайт</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td data-key="chapter3Row2Task">Жаратылышты пайдалануу жана жер казынасын пайдалануу чөйрөсүндө ачык-айкындуулукту камсыз кылуу</td>
+                                    <td data-key="chapter3Row2Actions">Кен казып алуу тармактарынын жана жаратылышты пайдалануучулардын айкындуулук демилгесинин сунуштамаларын эл аралык стандартка ылайык аткарууну камсыздоо</td>
+                                    <td data-key="chapter3Row2Deadline">2025-2027-жылдар</td>
+                                    <td data-key="chapter3Row2Results">Жаратылышты пайдалануу жана жер казынасын пайдалануу чөйрөсүндө мамлекеттик жана юридикалык жактардын ишинин ачык-айкындуулугу жогорулады</td>
+                                    <td data-key="chapter3Row2Responsible">ЖӨБО, мамлекеттик органдар</td>
+                                    <td data-key="chapter3Row2Funding">Республикалык бюджет</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td data-key="chapter3Row3Task">Бюджеттик процесстердин ачык-айкындуулугун жогорулатуу, контролдоо системасын өркүндөтүү жана финансылык тартипти бекемдөө</td>
+                                    <td data-key="chapter3Row3Actions">1. Төмөнкүлөргө багытталган бюджеттик укуктук мамилелер чөйрөсүндөгү ченемдик укуктук актыларды колдонууга талдоо жүргүзүү...</td>
+                                    <td data-key="chapter3Row3Deadline">2025-жылдын II жарым жылдыгы</td>
+                                    <td data-key="chapter3Row3Results">Аналитикалык кат түзүлдү</td>
+                                    <td data-key="chapter3Row3Responsible">ЖӨБО, мамлекеттик органдар</td>
+                                    <td data-key="chapter3Row3Funding">Республикалык бюджет</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg shadow-sm overflow-hidden">
+                <div class="chapter-header p-4 flex items-center justify-between text-lg font-medium text-gray-800 hover:bg-gray-200">
+                    <span data-key="chapter4Title">Глава 4. Санариптештирүү процесстерин өнүктүрүү жана азыркы этапта коррупцияга каршы күрөшүүнүн натыйжалуу чараларынын бири катары мамлекеттик жана муниципалдык түзүмдөрдүн ишине маалыматтык технологияларды киргизүү</span>
+                    <svg class="chevron w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="chapter-content p-4 text-gray-700">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <thead>
+                                <tr>
+                                    <th data-key="col1">№</th>
+                                    <th data-key="col2">Милдеттер</th>
+                                    <th data-key="col3">Иш-чаралар</th>
+                                    <th data-key="col4">Мөөнөттөрү</th>
+                                    <th data-key="col5">Натыйжалар</th>
+                                    <th data-key="col6">Жооптуулар</th>
+                                    <th data-key="col7">Каржылоо</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td data-key="chapter4Row1Task">Ишкердик субъекттеринин укуктарын коргоонун укуктук инструменттерин ишке киргизүү</td>
+                                    <td data-key="chapter4Row1Actions">1. ЭКМнын расмий порталында ишкердик субъекттерин каттоодо...<br>2. Прокуратура органдарында аларды каттагандан кийин гана...<br>3. Кыргыз Республикасында электрондук башкарууну ишке киргизүү...</td>
+                                    <td data-key="chapter4Row1Deadline">2025-2026-жылдар</td>
+                                    <td data-key="chapter4Row1Results">Коррупциялык тобокелдиктерди жоюу. ... Мамлекеттик башкаруу системасында санариптик технологияларды ишке киргизүү процесстерин аяктоо боюнча чаралар көрүлдү</td>
+                                    <td data-key="chapter4Row1Responsible">ЭКМ, райондук салык кызматы, укук коргоо органдары, мамлекеттик органдар</td>
+                                    <td data-key="chapter4Row1Funding">Республикалык бюджет</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td data-key="chapter4Row2Task">Мамлекеттик башкаруу системасын санариптештирүү</td>
+                                    <td data-key="chapter4Row2Actions">1. Маалыматты иштеп чыгуунун, берүүнүн жана жайылтуунун...<br>2. Учурдагы бюджеттик процесстерге талдоо жүргүзүү...<br>3.Төмөнкүлөрдү камтыган жүк ташууларды контролдоо боюнча...</td>
+                                    <td data-key="chapter4Row2Deadline">2025-2026-жылдар, 2025-жылдын I жарым жылдыгы, 2025-жылдын II кварталы, 2025-жыл</td>
+                                    <td data-key="chapter4Row2Results">Мамлекеттик башкаруу системасында санариптик технологияларды ишке киргизүү процесстерин аяктоо боюнча чаралар көрүлдү...</td>
+                                    <td data-key="chapter4Row2Responsible">ЖӨБО, мамлекеттик органдар, райондук салык кызматы</td>
+                                    <td data-key="chapter4Row2Funding">Республикалык бюджет</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td data-key="chapter4Row3Task">Жүк ташууларды контролдоо боюнча системаны ишке киргизүү</td>
+                                    <td data-key="chapter4Row3Actions">Ченөө бирдейлигин камсыздоо жаатында маалыматтык фондду иштеп чыгуу</td>
+                                    <td data-key="chapter4Row3Deadline">2025-2027-жылдар, 2025-2026-жылдар</td>
+                                    <td data-key="chapter4Row3Results">Мамлекеттик органдар менен өндүрүш секторлорунун ортосундагы өз ара аракеттенүүнүн ачык-айкын автоматташтырылган механизми...</td>
+                                    <td data-key="chapter4Row3Responsible">ЖӨБО, райондук салык кызматы, мамлекеттик органдар</td>
+                                    <td data-key="chapter4Row3Funding">Республикалык бюджет</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td data-key="chapter4Row4Task">Стандартташтыруу жана метрология жаатындагы акы төлөнүүчү мамлекеттик кызмат көрсөтүүлөрдү санариптештирүү</td>
+                                    <td data-key="chapter4Row4Actions">1. Лицензияларды жана уруксаттарды берүүнү кошкондо...<br>2. ЖӨБОдо жерди пайдалануу боюнча иштин санариптик эсебин...</td>
+                                    <td data-key="chapter4Row4Deadline">2025-2027-жылдар, 2025-2026-жылдар</td>
+                                    <td data-key="chapter4Row4Results">Мамлекеттик органдар менен өндүрүш секторлорунун ортосундагы өз ара аракеттенүүнүн ачык-айкын автоматташтырылган механизми...</td>
+                                    <td data-key="chapter4Row4Responsible">ЖӨБО, райондук салык кызматы, мамлекеттик органдар</td>
+                                    <td data-key="chapter4Row4Funding">Республикалык бюджет, эл аралык донорлор, гранттык каражаттар</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td data-key="chapter4Row5Task">Мамлекеттик жана муниципалдык кызмат көрсөтүүлөрдү, административдик жол-жоболорду санариптештирүү</td>
+                                    <td data-key="chapter4Row5Actions">Архитектура, курулуш жана турак жай-коммуналдык чарба чөйрөсүндөгү...</td>
+                                    <td data-key="chapter4Row5Deadline">2025-жыл, 2025-2027-жылдар</td>
+                                    <td data-key="chapter4Row5Results">Курулуш чөйрөсүндө уруксат берүүчү документтерди даярдоо жана берүү...</td>
+                                    <td data-key="chapter4Row5Responsible">ЖӨБО, райондук шаар курулуш, архитектура башкармасы, райондук жер ресурстар кадастр Мамагентинин филиалы, мамлекеттик органдар</td>
+                                    <td data-key="chapter4Row5Funding">Республикалык бюджет</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td data-key="chapter4Row6Task">Санариптештирүүнүн алкагында мамлекеттик (муниципалдык) кызматтарды алуу мүмкүнчүлүктөрү жөнүндө маалымдуулук боюнча...</td>
+                                    <td data-key="chapter4Row6Actions">Калктуу конуштардын коомдук жерлеринде укук бузуулардын жана кылмыштуулуктун алдын алуу маселелерин...</td>
+                                    <td data-key="chapter4Row6Deadline">2025-2027-жылдар</td>
+                                    <td data-key="chapter4Row6Results">"Коопсуз шаар" долбоору географиялык камтууну жана функционалын кеңейтүүдө</td>
+                                    <td data-key="chapter4Row6Responsible">ЖӨБО, РИИБ, мамлекеттик органдар</td>
+                                    <td data-key="chapter4Row6Funding">Республикалык бюджет</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td data-key="chapter4Row7Task">"Кылмыштардын бирдиктүү реестри" (КБР) АМСти модернизациялоо</td>
+                                    <td data-key="chapter4Row7Actions">Мамлекеттик органдардын жана ЖӨБО расмий сайттарында алардын иши жөнүндө...</td>
+                                    <td data-key="chapter4Row7Deadline">2025-2027-жылдар</td>
+                                    <td data-key="chapter4Row7Results">Мамлекеттик органдардын жана ЖӨБО расмий сайттарында... маалыматтарды жарыялоо боюнча чаралар көрүлдү...</td>
+                                    <td data-key="chapter4Row7Responsible">Укук коргоо органдары, ЖӨБО, мамлекеттик органдар</td>
+                                    <td data-key="chapter4Row7Funding">Республикалык бюджет</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg shadow-sm overflow-hidden">
+                <div class="chapter-header p-4 flex items-center justify-between text-lg font-medium text-gray-800 hover:bg-gray-200">
+                    <span data-key="chapter5Title">Глава 5. Коррупцияны изилдөө</span>
+                    <svg class="chevron w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="chapter-content p-4 text-gray-700">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <thead>
+                                <tr>
+                                    <th data-key="col1">№</th>
+                                    <th data-key="col2">Милдеттер</th>
+                                    <th data-key="col3">Иш-чаралар</th>
+                                    <th data-key="col4">Мөөнөттөрү</th>
+                                    <th data-key="col5">Натыйжалар</th>
+                                    <th data-key="col6">Жооптуулар</th>
+                                    <th data-key="col7">Каржылоо</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td data-key="chapter5Row1Task">Коррупцияга каршы маданиятты өнүктүрүү, коомдо коррупцияга сабырсыздык мамилени чагылдырган баалуулуктар системасын сактоо жана бекемдөө</td>
+                                    <td data-key="chapter5Row1Actions">Коррупцияга каршы маалыматтык саясаттын мамлекеттик программасын ишке ашыруу процессин...</td>
+                                    <td data-key="chapter5Row1Deadline">2025-2027-жылдар</td>
+                                    <td data-key="chapter5Row1Results">Жарандардын укуктук аңсезиминин жана укуктук маданиятынын деңгээлин жогорулатууга...</td>
+                                    <td data-key="chapter5Row1Responsible">ЖМА, ЖӨБО, мамлекеттик органдар</td>
+                                    <td data-key="chapter5Row1Funding">Республикалык бюджет. Өнүктүрүү боюнча өнөктөштөрдүн каражаттары</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg shadow-sm overflow-hidden">
+                <div class="chapter-header p-4 flex items-center justify-between text-lg font-medium text-gray-800 hover:bg-gray-200">
+                    <span data-key="chapter6Title">Глава 6. Коррупцияга каршы аракеттенүү жаатындагы эл аралык кызматташтык</span>
+                    <svg class="chevron w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="chapter-content p-4 text-gray-700">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <thead>
+                                <tr>
+                                    <th data-key="col1">№</th>
+                                    <th data-key="col2">Милдеттер</th>
+                                    <th data-key="col3">Иш-чаралар</th>
+                                    <th data-key="col4">Мөөнөттөрү</th>
+                                    <th data-key="col5">Натыйжалар</th>
+                                    <th data-key="col6">Жооптуулар</th>
+                                    <th data-key="col7">Каржылоо</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td data-key="chapter6Row1Task">Коррупциянын деңгээлин өлчөөнүн улуттук системасын иштеп чыгуу жана ишке ашыруу</td>
+                                    <td data-key="chapter6Row1Actions">1. Бириккен Улуттар Уюмунун Коррупцияга каршы конвенциясынын...<br>2. Кыргыз Республикасынын Экономикалык кызматташтык жана өнүктүрүү...</td>
+                                    <td data-key="chapter6Row1Deadline">2026-2027-жылдар, Туруктуу</td>
+                                    <td data-key="chapter6Row1Results">Жүргүзүлүп жаткан изилдөөлөр социалдык, экономикалык жана укуктук чөйрөдө...</td>
+                                    <td data-key="chapter6Row1Responsible">ЖӨБО, мамлекеттик органдар, ӨЭУ</td>
+                                    <td data-key="chapter6Row1Funding">Республикалык бюджет</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg shadow-sm overflow-hidden">
+                <div class="chapter-header p-4 flex items-center justify-between text-lg font-medium text-gray-800 hover:bg-gray-200">
+                    <span data-key="chapter7Title">Глава 7. Стратегияны ишке ашыруу механизмдери, финансы ресурстары</span>
+                    <svg class="chevron w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="chapter-content p-4 text-gray-700">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <thead>
+                                <tr>
+                                    <th data-key="col1">№</th>
+                                    <th data-key="col2">Милдеттер</th>
+                                    <th data-key="col3">Иш-чаралар</th>
+                                    <th data-key="col4">Мөөнөттөрү</th>
+                                    <th data-key="col5">Натыйжалар</th>
+                                    <th data-key="col6">Жооптуулар</th>
+                                    <th data-key="col7">Каржылоо</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td data-key="chapter7Row1Task">Коррупцияга каршы аракеттенүү жаатында эл аралык кызматташтыктын жана өз ара аракеттенүүнүн натыйжалуулугун жогорулатуу жана өнүктүрүү</td>
+                                    <td data-key="chapter7Row1Actions">1. Көз карандысыз Мамлекеттердин Шериктештигинин...<br>2. Кыргыз Республикасынын Европа Кеңешинин...<br>3. Эл аралык коррупцияга каршы ченемдерди, стандарттарды...</td>
+                                    <td data-key="chapter7Row1Deadline">Туруктуу, 2025-2027-жылдар</td>
+                                    <td data-key="chapter7Row1Results">Кыргыз Республикасы абройлуу эл аралык уюмдарда активдүү катышууда...</td>
+                                    <td data-key="chapter7Row1Responsible">ЖӨБО, мамлекеттик органдар</td>
+                                    <td data-key="chapter7Row1Funding">Республикалык бюджет</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td data-key="chapter7Row2Task">Коррупцияга каршы аракеттенүү жаатындагы эл аралык рейтингдерде Кыргыз Республикасынын позициясын жакшыртуу</td>
+                                    <td data-key="chapter7Row2Actions">Стратегияны ишке ашыруу боюнча коррупцияга каршы иш-чараларды каржылоо</td>
+                                    <td data-key="chapter7Row2Deadline">2025-жылдын I кварталы</td>
+                                    <td data-key="chapter7Row2Results">Мамлекеттик бийлик органдары жана ЖӨБО тарабынан...</td>
+                                    <td data-key="chapter7Row2Responsible">ЖӨБО, мамлекеттик органдар</td>
+                                    <td data-key="chapter7Row2Funding">Республикалык бюджет</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td data-key="chapter7Row3Task">Стратегияны ишке ашыруу механизмдерин иштеп чыгуу</td>
+                                    <td data-key="chapter7Row3Actions">Стратегияны ишке ашыруу боюнча коррупцияга каршы иш-чараларды каржылоо</td>
+                                    <td data-key="chapter7Row3Deadline">2025-2027-жылдар</td>
+                                    <td data-key="chapter7Row3Results">Стратегиядан келип чыккан коррупцияга каршы иш-чаралар...</td>
+                                    <td data-key="chapter7Row3Responsible">ЖӨБО, мамлекеттик органдар</td>
+                                    <td data-key="chapter7Row3Funding">Республикалык и жергиликтүү бюджеттер</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg shadow-sm overflow-hidden">
+                <div class="chapter-header p-4 flex items-center justify-between text-lg font-medium text-gray-800 hover:bg-gray-200">
+                    <span data-key="chapter8Title">Глава 8. Стратегияны ишке ашыруу процесстерине мониторинг жана баалоо жүргүзүү</span>
+                    <svg class="chevron w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="chapter-content p-4 text-gray-700">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <thead>
+                                <tr>
+                                    <th data-key="col1">№</th>
+                                    <th data-key="col2">Милдеттер</th>
+                                    <th data-key="col3">Иш-чаралар</th>
+                                    <th data-key="col4">Мөөнөттөрү</th>
+                                    <th data-key="col5">Натыйжалар</th>
+                                    <th data-key="col6">Жооптуулар</th>
+                                    <th data-key="col7">Каржылоо</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td data-key="chapter8Row1Task">Мамлекеттик стратегияны ишке ашыруу процесстерин координациялоо жана контролдоо</td>
+                                    <td data-key="chapter8Row1Actions">Коррупцияга каршы пландуу иш-чаралардын I этабын ишке ашыруунун жыйынтыктарын...</td>
+                                    <td data-key="chapter8Row1Deadline">2027-жылдын I жарым жылы</td>
+                                    <td data-key="chapter8Row1Results">Талдоонун негизинде 2028-2030-жылдарга... Иш-чаралар планы даярдалды жана бекитилди</td>
+                                    <td data-key="chapter8Row1Responsible">ЖӨБО, мамлекеттик органдар</td>
+                                    <td data-key="chapter8Row1Funding">Республикалык бюджет</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td data-key="chapter8Row2Task">Коррупцияга каршы иш-чараларды өз убагында жана толук финансылык камсыздоо</td>
+                                    <td data-key="chapter8Row2Actions">Натыйжалуулук жана таасирдүүлүк индикаторлоруна негизделген...</td>
+                                    <td data-key="chapter8Row2Deadline">2027-жылдын I жарым жылы</td>
+                                    <td data-key="chapter8Row2Results">Талдоонун негизинде 2028-2030-жылдарга... Иш-чаралар планы даярдалды жана бекитилди</td>
+                                    <td data-key="chapter8Row2Responsible">ЖӨБО, мамлекеттик органдар</td>
+                                    <td data-key="chapter8Row2Funding">Консолидацияланган бюджет. Өнүктүрүү боюнча өнөктөштөрдүн каражаттары</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td data-key="chapter8Row3Task">Пландуу иш-чараларды актуалдаштыруу, жаңы милдеттерди коюу...</td>
+                                    <td data-key="chapter8Row3Actions">Сандык жана сапаттык көрсөткүчтөрдү эске алуу менен коррупцияга каршы иш-чараларды...</td>
+                                    <td data-key="chapter8Row3Deadline">2025-жылдын I жарым жылдыгы</td>
+                                    <td data-key="chapter8Row3Results">Мониторинг жүргүзүүнүн тартиби (методикасы) и отчеттун бирдиктүү формасы иштелип чыкты...</td>
+                                    <td data-key="chapter8Row3Responsible">ЖӨБО, мамлекеттик органдар</td>
+                                    <td data-key="chapter8Row3Funding">Республикалык бюджет</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="translation.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Получаем все заголовки разделов
+            const headers = document.querySelectorAll('.chapter-header');
+
+            headers.forEach(header => {
+                header.addEventListener('click', () => {
+                    // Находим соответствующее содержимое
+                    const content = header.nextElementSibling;
+                    const chevron = header.querySelector('.chevron');
+
+                    // Переключаем класс, чтобы анимировать высоту
+                    content.classList.toggle('expanded');
+                    header.classList.toggle('expanded');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="page-title-ukazy">Указы - Кара-Гуз айыл аймагы</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .document-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+            .document-header h3, .document-header h4 {
+                margin: 0;
+                line-height: 1.2;
+            }
+
+        .document-section {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+
+            .document-section:last-of-type {
+                border-bottom: none;
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+
+        .document-title {
+            text-align: center;
+            font-size: 1.5em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .document-body {
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .resolution-number {
+            text-align: right;
+        }
+
+        .resolution-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+            .resolution-details p {
+                margin: 0;
+            }
+
+        .document-footer {
+            margin-top: 40px;
+            text-align: right;
+            font-weight: bold;
+        }
+
+        .chairman-info {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+            .chairman-info span {
+                margin-left: 20px;
+            }
+
+        .plan-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+            .plan-table th, .plan-table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                vertical-align: top;
+            }
+
+            .plan-table th {
+                background-color: #f2f2f2;
+                font-weight: bold;
+                text-align: center;
+            }
+
+        .plan-footer {
+            margin-top: 40px;
+            font-weight: bold;
+        }
+
+            .plan-footer p {
+                text-align: right;
+            }
+
+        .abbreviations-list {
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+
+            .abbreviations-list h4 {
+                margin-bottom: 10px;
+            }
+
+            .abbreviations-list p {
+                margin: 5px 0;
+            }
+
+        /* Стили для кнопок перевода */
+        .language-switcher {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .lang-btn {
+            background-color: #fff;
+            border: 1px solid #0056b3;
+            color: #0056b3;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+            .lang-btn.active {
+                background-color: #0056b3;
+                color: #fff;
+            }
+
+        /* Стили для нового блока PDF */
+        .pdf-viewer {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+            .pdf-viewer h2 {
+                margin-top: 0;
+                color: #333;
+            }
+
+            .pdf-viewer p {
+                color: #666;
+            }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Логотип Кара-Гуз айыл аймагы" class="logo-img" width="50" height="50">
+                <span class="logo-text" data-translate="logo-text">КАРА-ГУЗ</span>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" data-translate="nav-main">Главная</a></li>
+                    <li><a href="about.html" data-translate="nav-about">О нас</a></li>
+                    <li><a href="news.html" data-translate="nav-news">Новости</a></li>
+                    <li><a href="appeals.html" data-translate="nav-appeals">Обращения</a></li>
+                    <li><a href="gallery.html" data-translate="nav-gallery">Галерея</a></li>
+                    <li><a href="contacts.html" data-translate="nav-contacts">Контакты</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="Открыть меню" aria-controls="nav-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div class="container">
+            <h1 class="section-title" data-translate="main-title-ukazy">Указы</h1>
+            <div class="language-switcher">
+                <button id="lang-ru" class="lang-btn active">RU</button>
+                <button id="lang-kg" class="lang-btn">KG</button>
+            </div>
+
+            <div class="pdf-viewer">
+                <h2 data-translate="pdf-title-1">Архив указов (PDF)</h2>
+                <p data-translate="pdf-description-1">Просмотреть все указы в одном документе.</p>
+                <iframe src="Файлы для сайта/Кара-Гуз айыл аймагынын айылдык Кеңешинин VIII чакырылышынын 2025-жылдагы V сессиясы.docx.pdf" width="100%" height="800px" style="border: none;">
+                    <p>Ваш браузер не поддерживает просмотр PDF. Вы можете <a href="ukazy.pdf" data-translate="pdf-download-link-1">скачать его здесь</a>.</p>
+                </iframe>
+            </div>
+
+            <div class="pdf-viewer">
+                <h2 data-translate="pdf-title-2">Архив указов 2 (PDF)</h2>
+                <p data-translate="pdf-description-2">Просмотреть второй архив указов.</p>
+                <iframe src="Файлы для сайта/Кара-Гуз айыл аймагынын айылдык Кеңешинин VIII чакырылышынын 2025-жылдагы VI сессиясы.docx.pdf" width="100%" height="800px" style="border: none;">
+                    <p>Ваш браузер не поддерживает просмотр PDF. Вы можете <a href="ukazy2.pdf" data-translate="pdf-download-link-2">скачать его здесь</a>.</p>
+                </iframe>
+            </div>
+
+            <div class="pdf-viewer">
+                <h2 data-translate="pdf-title-3">Архив указов 3 (PDF)</h2>
+                <p data-translate="pdf-description-3">Просмотреть третий архив указов.</p>
+                <iframe src="Файлы для сайта/Кара-Гуз айыл аймагынын айылдык Кеңешинин VIII чакырылышынын 2025-жылдагы VII сессиясы.docx.pdf" width="100%" height="800px" style="border: none;">
+                    <p>Ваш браузер не поддерживает просмотр PDF. Вы можете <a href="ukazy3.pdf" data-translate="pdf-download-link-3">скачать его здесь</a>.</p>
+                </iframe>
+            </div>
+
+            <div class="pdf-viewer">
+                <h2 data-translate="pdf-title-4">Архив указов 4 (PDF)</h2>
+                <p data-translate="pdf-description-4">Просмотреть четвертый архив указов.</p>
+                <iframe src="Файлы для сайта/Кара-Гуз айыл аймагынын айылдык Кеңешинин VIII чакырылышынын 2025-жылдагы VIII сессиясы.docx.pdf" width="100%" height="800px" style="border: none;">
+                    <p>Ваш браузер не поддерживает просмотр PDF. Вы можете <a href="ukazy4.pdf" data-translate="pdf-download-link-4">скачать его здесь</a>.</p>
+                </iframe>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-block">
+                <h4 data-translate="footer-contacts-title">Контакты</h4>
+                <p data-translate="footer-address">Кыргызская Республика, Ошская область, Кара-Кульджинский район, село Кара-Гуз</p>
+                <p data-translate="footer-phone">Телефон: +996 (3239) 5-04-73</p>
+            </div>
+            <div class="footer-block">
+                <h4 data-translate="footer-social-title">Следите за нами</h4>
+                <ul class="social-links">
+                    <li><a href="#"><img src="images/facebook-icon.svg" alt="Facebook"></a></li>
+                    <li><a href="#"><img src="images/instagram-icon.svg" alt="Instagram"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-translate="footer-copyright">&copy; 2025 Кара-Гуз айыл аймагы. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="ukazy-script.js"></script>
+</body>
+</html>
